@@ -1,0 +1,7 @@
+[
+  { "name": "Facebook", "icon": "/icons/facebook.png", "link": "https://static.vecteezy.com/system/resources/previews/018/930/698/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" },
+  { "name": "YouTube", "icon": "/icons/youtube.svg", "link": "https://youtube.com" },
+  { "name": "Spotify", "icon": "/icons/spotify.svg", "link": "https://spotify.com" },
+  { "name": "Dribbble", "icon": "/icons/dribbble.svg", "link": "https://dribbble.com" },
+  { "name": "PayPal", "icon": "/icons/paypal.svg", "link": "https://paypal.com" }
+]
