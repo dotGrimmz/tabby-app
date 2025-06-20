@@ -3,16 +3,17 @@ export default defineEventHandler(() => {
     Home: [
       {
         title: "Vue 3.5 Announced with Performance Boost",
-        source: "earlychip.com",
+        source: "https://tomaszs2.medium.com/vue-3-5-a-leap-forward-with-performance-boosts-and-new-features-9818e76c0a5b",
         tag: "Sponsored",
         timestamp: "1h ago",
-        image: "https://source.unsplash.com/featured/?vuejs"
+        image: "/images/vue3.jpg"
+
       },
       {
         title: "Remote Work Trends for 2025",
         source: "remoteworkweekly.com",
         timestamp: "3h ago",
-        image: "https://source.unsplash.com/featured/?remote,work"
+        image: "/images/vue3.jpg"
       },
       {
         title: "How Solar Energy is Shaping the Future",
@@ -27,7 +28,7 @@ export default defineEventHandler(() => {
         title: "2025 Midterm Elections Preview",
         source: "dailyreport.com",
         timestamp: "2h ago",
-        image: "https://source.unsplash.com/featured/?politics"
+        image: "/images/2025midterm.jpg"
       },
       {
         title: "Climate Changes Impacting Global Crops",
@@ -49,7 +50,7 @@ export default defineEventHandler(() => {
         title: "Champions League Final Set for June 2025",
         source: "sportshub.com",
         timestamp: "30m ago",
-        image: "https://source.unsplash.com/featured/?football"
+        image: "/images/champions.jpg"
       },
       {
         title: "Top 10 NBA Draft Picks This Season",
@@ -70,7 +71,7 @@ export default defineEventHandler(() => {
         title: "Stock Market Rally Expected to Continue",
         source: "financenews.com",
         timestamp: "1h ago",
-        image: "https://source.unsplash.com/featured/?stockmarket"
+        image: "/images/stocks.jpg"
       },
       {
         title: "Cryptocurrency Regulations Tighten Worldwide",
@@ -92,7 +93,7 @@ export default defineEventHandler(() => {
         source: "lifestyletoday.com",
         tag: "Wellness",
         timestamp: "2h ago",
-        image: "https://source.unsplash.com/featured/?minimalism"
+        image: "/images/minimalism.jpg"
       },
       {
         title: "Top 5 Vegan Recipes to Try This Summer",
@@ -112,7 +113,7 @@ export default defineEventHandler(() => {
         title: "New Policies Aim to Improve Urban Infrastructure",
         source: "policywatch.com",
         timestamp: "1h ago",
-        image: "https://source.unsplash.com/featured/?infrastructure"
+        image: "/images/politics.jpg"
       },
       {
         title: "Debate Over Climate Change Laws Intensifies",
@@ -134,7 +135,7 @@ export default defineEventHandler(() => {
         source: "wellnessdaily.com",
         tag: "Mindfulness",
         timestamp: "2h ago",
-        image: "https://source.unsplash.com/featured/?meditation"
+        image: "/images/meditation.jpg"
       },
       {
         title: "The Rise of Telehealth Services in 2025",
@@ -154,7 +155,7 @@ export default defineEventHandler(() => {
         title: "Exploring Exotic Flavors: A Culinary Journey",
         source: "foodlover.com",
         timestamp: "1h ago",
-        image: "https://source.unsplash.com/featured/?exotic,food"
+        image: "/images/food.jpg"
       },
       {
         title: "The Best Summer Cocktails to Try This Year",
@@ -175,7 +176,7 @@ export default defineEventHandler(() => {
         title: "Top Box Office Hits of 2025",
         source: "moviebuzz.com",
         timestamp: "2h ago",
-        image: "https://source.unsplash.com/featured/?movies"
+        image: "/images/sinners.jpg"
       },
       {
         title: "Interview with Award-Winning Director",

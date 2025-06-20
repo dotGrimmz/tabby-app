@@ -29,9 +29,9 @@ const tabs = [
 <style scoped>
 .tab-nav {
   display: flex;
-  justify-content: center; /* center buttons horizontally */
-  flex-wrap: wrap; /* wrap on small screens */
-  gap: 8px; /* space between buttons */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
   padding-bottom: 8px;
   border-bottom: 2px solid #ccc;
 }
@@ -43,7 +43,6 @@ const tabs = [
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.2s ease;
-  /* remove margin-right since gap handles spacing */
 }
 
 .tab-nav button.active {
