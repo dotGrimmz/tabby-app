@@ -22,6 +22,7 @@ const props = defineProps({
   text-align: center;
   font-size: 12px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .app-icon img {
@@ -33,6 +34,9 @@ const props = defineProps({
 
 .icon-text {
   color: #333;
-  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.app-icon:hover .icon-text {
+  color: lightgreen;
 }
 </style>

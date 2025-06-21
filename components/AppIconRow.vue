@@ -18,11 +18,7 @@ onMounted(async () => {
 <template>
   <div class="icon-row">
     <AppIcon v-for="icon in icons" :key="icon.name" v-bind="icon" />
-    <AppIcon
-      name="Add"
-      icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbK6Z6dI6tw3QLHnie43wHplGkck8lr2krHw&s"
-      link="#"
-    />
+    <AppIcon name="Add" icon="/images/add.png" link="#" />
   </div>
 </template>
 
