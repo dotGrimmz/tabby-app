@@ -1,10 +1,16 @@
 <template>
   <form @submit.prevent="onSubmit" class="search-bar">
-    <input
-      v-model="query"
-      type="text"
-      placeholder="Search the web or type a URL"
-    />
+    <div class="search-wrapper">
+      <span class="search-icon">
+        🔍
+        <!-- replace with actual icon or <img> -->
+      </span>
+      <input
+        v-model="query"
+        type="text"
+        placeholder="Search the web or type a URL"
+      />
+    </div>
   </form>
 </template>
 
@@ -24,10 +30,31 @@ const onSubmit = () => {
   text-align: center;
   margin-top: 2rem;
 }
-input {
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px; /* Adjust based on image you're sending */
   width: 60%;
-  padding: 0.75rem;
-  border-radius: 50px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
   border: 1px solid #ccc;
+  border-radius: 50px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
 }
 </style>
