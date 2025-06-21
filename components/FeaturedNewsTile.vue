@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="source.startsWith('http') ? source : `https://${source}`"
+    :href="source"
     target="_blank"
     rel="noopener noreferrer"
     class="featured-news-tile"
@@ -11,13 +11,13 @@
     <div class="text-content">
       <p class="tag" v-if="tag">{{ tag }}</p>
       <h2 class="title">{{ title }}</h2>
-      <p class="meta">{{ displaySource }} — {{ timestamp }}</p>
+      <p class="meta">{{ source }} — {{ timestamp }}</p>
     </div>
   </a>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useTracking } from "@/composables/useTracking";
 
 const props = defineProps({
@@ -30,52 +30,49 @@ const props = defineProps({
 
 const tileRef = ref(null);
 const { trackClick } = useTracking(tileRef, props.title);
-
-const displaySource = computed(() => {
-  try {
-    return new URL(props.source).hostname.replace("www.", "");
-  } catch {
-    return props.source;
-  }
-});
 </script>
 
 <style scoped>
 .featured-news-tile {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  min-width: 25%;
-  color: inherit;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
 }
+
 .featured-news-tile:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
+
 .featured-img {
   width: 100%;
-  height: 28rem;
+  height: 220px;
   object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  display: block;
 }
+
 .text-content {
   padding: 1rem;
 }
+
 .tag {
   font-size: 0.75rem;
-  font-weight: 600;
-  color: #f97316;
+  font-weight: bold;
+  color: #10b981; /* Tailwind green-500 */
+  margin-bottom: 0.25rem;
 }
+
 .title {
   font-size: 1.25rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
+
 .meta {
   font-size: 0.875rem;
   color: #6b7280;

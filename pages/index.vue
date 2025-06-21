@@ -1,13 +1,11 @@
 <template>
-  <div class="container space-y-8">
-    <h1>News Portal</h1>
+  <div class="page-wrapper">
     <SearchBar />
-
     <AppIconRow />
 
-    <TabNav v-model="selectedTab" />
+    <div class="content-panel">
+      <TabNav v-model="selectedTab" />
 
-    <section class="news-section">
       <FeaturedNewsTile v-bind="featuredStory" />
 
       <div class="news-grid">
@@ -19,7 +17,7 @@
       </div>
 
       <RelatedStories :stories="relatedStories" />
-    </section>
+    </div>
   </div>
 </template>
 
@@ -38,39 +36,30 @@ const relatedStories = computed(() =>
 );
 </script>
 <style scoped>
-.news-section {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.page-wrapper {
+  /* max-width: 960px; */
+  width: 1060px;
+  outline: 2px solid red;
+  margin: 0 auto;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+.content-panel {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
   width: 100%;
-  margin-top: 1.5rem;
-}
-
-.container {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-}
-
-.space-y-8 > * + * {
   margin-top: 2rem;
 }
 
-h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 </style>

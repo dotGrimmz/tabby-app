@@ -1,32 +1,47 @@
 <template>
-  <div v-if="stories?.length" class="mt-10">
-    <h3 class="text-xl font-bold mb-4">Related Stories</h3>
-    <div class="space-y-4">
-      <NewsTile v-for="(story, i) in stories" :key="i" v-bind="story" />
+  <section v-if="stories?.length" class="related-stories">
+    <h3 class="heading">Related Stories</h3>
+    <div class="story-list">
+      <NewsTile v-for="(story, index) in stories" :key="index" v-bind="story" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
+import NewsTile from "./NewsTile.vue";
+
 defineProps({
-  stories: Array,
+  stories: {
+    type: Array,
+    required: true,
+  },
 });
 </script>
+
 <style scoped>
-div {
-  max-width: 700px;
-  margin: 2rem auto 0;
-  padding: 0 1rem;
-  text-align: center;
+.related-stories {
+  margin-top: 2rem;
+  padding: 1rem 0;
 }
 
-h3 {
+.heading {
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  font-size: 1.4rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
 }
 
-.space-y-4 > * + * {
-  margin-top: 1rem;
+.story-list {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Optional: For wider screens, use a multi-column layout */
+@media (min-width: 768px) {
+  .story-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 </style>

@@ -21,6 +21,32 @@ export default defineEventHandler(() => {
         tag: "Environment",
         timestamp: "6h ago",
         image: "https://source.unsplash.com/featured/?solar"
+      }, {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?solar"
+      },
+       {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?solar"
+      }, {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?solar"
+      },
+       {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?solar"
       }
     ],
     News: [
@@ -36,6 +62,34 @@ export default defineEventHandler(() => {
         tag: "Climate",
         timestamp: "4h ago",
         image: "https://source.unsplash.com/featured/?climate"
+      },
+      {
+        title: "Breakthrough in AI-Powered Healthcare",
+        source: "healthtechnews.com",
+        tag: "Health",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?artificialintelligence,healthcare"
+      },
+      {
+        title: "Breakthrough in AI-Powered Healthcare",
+        source: "healthtechnews.com",
+        tag: "Health",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?artificialintelligence,healthcare"
+      },
+      {
+        title: "Breakthrough in AI-Powered Healthcare",
+        source: "healthtechnews.com",
+        tag: "Health",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?artificialintelligence,healthcare"
+      },
+      {
+        title: "Breakthrough in AI-Powered Healthcare",
+        source: "healthtechnews.com",
+        tag: "Health",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?artificialintelligence,healthcare"
       },
       {
         title: "Breakthrough in AI-Powered Healthcare",
@@ -64,6 +118,34 @@ export default defineEventHandler(() => {
         tag: "Fitness",
         timestamp: "4h ago",
         image: "https://source.unsplash.com/featured/?marathon"
+      },
+      {
+        title: "Marathon Training Tips for Beginners",
+        source: "runfastmag.com",
+        tag: "Fitness",
+        timestamp: "4h ago",
+        image: "https://source.unsplash.com/featured/?marathon"
+      },
+      {
+        title: "Marathon Training Tips for Beginners",
+        source: "runfastmag.com",
+        tag: "Fitness",
+        timestamp: "4h ago",
+        image: "https://source.unsplash.com/featured/?marathon"
+      },
+      {
+        title: "Marathon Training Tips for Beginners",
+        source: "runfastmag.com",
+        tag: "Fitness",
+        timestamp: "4h ago",
+        image: "https://source.unsplash.com/featured/?marathon"
+      },
+      {
+        title: "Marathon Training Tips for Beginners",
+        source: "runfastmag.com",
+        tag: "Fitness",
+        timestamp: "4h ago",
+        image: "https://source.unsplash.com/featured/?marathon"
       }
     ],
     Money: [
@@ -79,6 +161,30 @@ export default defineEventHandler(() => {
         tag: "Crypto",
         timestamp: "3h ago",
         image: "https://source.unsplash.com/featured/?cryptocurrency"
+      },
+      {
+        title: "Tips for Saving More on Your Taxes",
+        source: "moneymatters.com",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?tax"
+      },
+      {
+        title: "Tips for Saving More on Your Taxes",
+        source: "moneymatters.com",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?tax"
+      },
+      {
+        title: "Tips for Saving More on Your Taxes",
+        source: "moneymatters.com",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?tax"
+      },
+      {
+        title: "Tips for Saving More on Your Taxes",
+        source: "moneymatters.com",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?tax"
       },
       {
         title: "Tips for Saving More on Your Taxes",
@@ -106,6 +212,30 @@ export default defineEventHandler(() => {
         source: "homedecorideas.org",
         timestamp: "6h ago",
         image: "https://source.unsplash.com/featured/?homeoffice"
+      },
+      {
+        title: "How to Create a Cozy Home Office",
+        source: "homedecorideas.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?homeoffice"
+      },
+      {
+        title: "How to Create a Cozy Home Office",
+        source: "homedecorideas.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?homeoffice"
+      },
+      {
+        title: "How to Create a Cozy Home Office",
+        source: "homedecorideas.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?homeoffice"
+      },
+      {
+        title: "How to Create a Cozy Home Office",
+        source: "homedecorideas.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?homeoffice"
       }
     ],
     Politics: [
@@ -121,6 +251,30 @@ export default defineEventHandler(() => {
         tag: "Climate",
         timestamp: "3h ago",
         image: "https://source.unsplash.com/featured/?debate"
+      },
+      {
+        title: "Election Campaigns Enter Final Stretch",
+        source: "vote2025.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?election"
+      },
+      {
+        title: "Election Campaigns Enter Final Stretch",
+        source: "vote2025.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?election"
+      },
+      {
+        title: "Election Campaigns Enter Final Stretch",
+        source: "vote2025.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?election"
+      },
+      {
+        title: "Election Campaigns Enter Final Stretch",
+        source: "vote2025.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?election"
       },
       {
         title: "Election Campaigns Enter Final Stretch",
@@ -148,6 +302,30 @@ export default defineEventHandler(() => {
         source: "nutritiontoday.org",
         timestamp: "6h ago",
         image: "https://source.unsplash.com/featured/?superfoods"
+      },
+      {
+        title: "Superfoods to Boost Your Immune System",
+        source: "nutritiontoday.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?superfoods"
+      },
+      {
+        title: "Superfoods to Boost Your Immune System",
+        source: "nutritiontoday.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?superfoods"
+      },
+      {
+        title: "Superfoods to Boost Your Immune System",
+        source: "nutritiontoday.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?superfoods"
+      },
+      {
+        title: "Superfoods to Boost Your Immune System",
+        source: "nutritiontoday.org",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?superfoods"
       }
     ],
     Food: [
@@ -169,6 +347,30 @@ export default defineEventHandler(() => {
         source: "healthyeats.org",
         timestamp: "5h ago",
         image: "https://source.unsplash.com/featured/?plantbased"
+      },
+      {
+        title: "Plant-Based Diets: Benefits and Recipes",
+        source: "healthyeats.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?plantbased"
+      },
+      {
+        title: "Plant-Based Diets: Benefits and Recipes",
+        source: "healthyeats.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?plantbased"
+      },
+      {
+        title: "Plant-Based Diets: Benefits and Recipes",
+        source: "healthyeats.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?plantbased"
+      },
+      {
+        title: "Plant-Based Diets: Benefits and Recipes",
+        source: "healthyeats.org",
+        timestamp: "5h ago",
+        image: "https://source.unsplash.com/featured/?plantbased"
       }
     ],
     Entertainment: [
@@ -183,6 +385,34 @@ export default defineEventHandler(() => {
         source: "cinephilemag.net",
         timestamp: "4h ago",
         image: "https://source.unsplash.com/featured/?director"
+      },
+      {
+        title: "Music Festivals to Watch This Summer",
+        source: "festivalseason.com",
+        tag: "Music",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?music,festival"
+      },
+      {
+        title: "Music Festivals to Watch This Summer",
+        source: "festivalseason.com",
+        tag: "Music",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?music,festival"
+      },
+      {
+        title: "Music Festivals to Watch This Summer",
+        source: "festivalseason.com",
+        tag: "Music",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?music,festival"
+      },
+      {
+        title: "Music Festivals to Watch This Summer",
+        source: "festivalseason.com",
+        tag: "Music",
+        timestamp: "6h ago",
+        image: "https://source.unsplash.com/featured/?music,festival"
       },
       {
         title: "Music Festivals to Watch This Summer",

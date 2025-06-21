@@ -3,7 +3,7 @@
     <button
       v-for="tab in tabs"
       :key="tab"
-      :class="{ active: tab === modelValue }"
+      :class="['tab-button', { active: tab === modelValue }]"
       @click="$emit('update:modelValue', tab)"
     >
       {{ tab }}
@@ -14,6 +14,7 @@
 <script setup>
 defineProps(["modelValue"]);
 defineEmits(["update:modelValue"]);
+
 const tabs = [
   "Home",
   "News",
@@ -26,27 +27,35 @@ const tabs = [
   "Entertainment",
 ];
 </script>
+
 <style scoped>
 .tab-nav {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #ccc;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
-.tab-nav button {
-  padding: 8px 12px;
-  border: none;
-  background: #eee;
+.tab-button {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  background-color: #f3f4f6;
+  color: #374151;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.tab-nav button.active {
-  background-color: #0070f3;
+.tab-button:hover {
+  background-color: #e5e7eb;
+}
+
+.tab-button.active {
+  background-color: #2563eb;
   color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 </style>
