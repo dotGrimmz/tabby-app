@@ -1,4 +1,3 @@
-<!-- components/CompactRelatedStories.vue -->
 <template>
   <div v-if="stories?.length" class="compact-list">
     <h3 class="section-title">More in this category</h3>
@@ -20,10 +19,6 @@ defineProps({
 </script>
 
 <style scoped>
-/* .compact-list {
-  margin-top: 2rem;
-} */
-
 .section-title {
   font-size: 1rem;
   font-weight: 600;

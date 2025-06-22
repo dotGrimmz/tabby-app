@@ -17,19 +17,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useTracking } from "@/composables/useTracking";
-
 const props = defineProps({
   title: String,
   source: String,
   timestamp: String,
   tag: String,
   image: String,
+  id: Number,
 });
 
 const tileRef = ref(null);
-const { trackClick } = useTracking(tileRef, props.title);
+const { trackClick } = useTracking(tileRef, props.title, props.id);
 </script>
 
 <style scoped>

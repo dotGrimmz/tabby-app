@@ -1,7 +1,4 @@
 <script setup>
-import AppIcon from "./AppIcon.vue";
-import { ref, onMounted } from "vue";
-
 const icons = ref([]);
 
 onMounted(async () => {
@@ -35,7 +32,6 @@ onMounted(async () => {
   margin: 0 auto;
 }
 
-/* Responsive adjustments */
 @media (max-width: 640px) {
   .icon-row {
     gap: 8px;
