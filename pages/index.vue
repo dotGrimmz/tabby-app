@@ -8,7 +8,7 @@
     </div>
 
     <div class="content-panel">
-      <TabNav v-model="selectedTab" />
+      <TabNav v-if="hydrated" v-model="selectedTab" />
 
       <div v-if="!newsData || !newsData[selectedTab]" class="news-grid loading">
         <SkeletonLoader class="featured" />
@@ -51,7 +51,12 @@
 </template>
 
 <script setup>
-const selectedTab = ref("Home");
+const { tab: selectedTab, hydrated } = usePersistedState(
+  "selectedTab",
+  "Home",
+  "index-scroll-position"
+);
+
 const { data: icons } = await useFetch("/api/icons");
 const { data: newsData } = await useFetch("/api/newsData");
 
@@ -67,7 +72,6 @@ const otherStories = computed(
 );
 
 const { isMobile, isDesktop } = useIsMobile();
-console.log("isDesktop:", isDesktop);
 </script>
 
 <style scoped>
