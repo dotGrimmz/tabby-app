@@ -7,6 +7,11 @@
       <TabNav v-model="selectedTab" />
 
       <div class="news-grid">
+        <RelatedStories
+          v-if="relatedStories.length"
+          :stories="relatedStories"
+          class="related-stories"
+        />
         <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
         <NewsTile

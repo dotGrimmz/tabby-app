@@ -4,15 +4,15 @@
     <ul class="story-list">
       <li v-for="(story, i) in stories" :key="i" class="story-item">
         <a :href="story.source" target="_blank" class="story-link">
-          <img
-            v-if="story.image"
-            :src="story.image"
-            :alt="story.title"
-            class="thumbnail"
-          />
+          <span class="row">
+            <aside>⚠️Warning</aside>
+            <p>
+              {{ story.timestamp }}
+            </p>
+          </span>
+
           <div class="text-content">
             <p class="title">{{ story.title }}</p>
-            <p class="meta">{{ story.source }} · {{ story.timestamp }}</p>
           </div>
         </a>
       </li>
@@ -28,31 +28,57 @@ defineProps({
 
 <style scoped>
 .related-stories {
-  padding-left: 1.5rem;
-  border-left: 1px solid #eee;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  margin-top: 1.5rem;
 }
 
 .heading {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: #2563eb;
+  margin-left: 0.5rem;
 }
 
+.row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6rem;
+  max-height: 1.5rem;
+  justify-content: space-between;
+  & > aside {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .story-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  display: block;
+  padding: 0.5rem 0.75rem;
 }
 
 .story-item {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
 }
 
 .story-link {
   display: flex;
   text-decoration: none;
   color: #111;
-  gap: 0.75rem;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
 }
 
 .story-link:hover .title {
@@ -68,6 +94,7 @@ defineProps({
 
 .text-content {
   flex: 1;
+  padding-top: 0;
 }
 
 .title {
