@@ -24,8 +24,6 @@ const props = defineProps(["title", "source", "tag", "timestamp", "image"]);
 const tileRef = ref(null);
 const { trackTileShown, trackClick } = useTracking(tileRef, props.title);
 
-console.log(props.tag, "tag");
-
 const cleanSource = computed(() => {
   try {
     const url = new URL(props.source);
