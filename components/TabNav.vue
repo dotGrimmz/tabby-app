@@ -1,6 +1,7 @@
 <template>
   <nav class="tab-nav">
-    <ul>
+    <!-- Desktop Tabs -->
+    <ul v-if="!isMobile" class="tabs">
       <li
         v-for="tab in tabs"
         :key="tab"
@@ -10,12 +11,23 @@
         {{ tab }}
       </li>
     </ul>
+
+    <!-- Mobile Dropdown -->
+    <select
+      v-else
+      v-model="selected"
+      @change="$emit('update:modelValue', selected)"
+    >
+      <option v-for="tab in tabs" :key="tab" :value="tab">{{ tab }}</option>
+    </select>
   </nav>
 </template>
 
 <script setup>
-defineProps(["modelValue"]);
-defineEmits(["update:modelValue"]);
+import { ref, watch, onMounted, onBeforeUnmount } from "vue";
+
+const props = defineProps(["modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
 
 const tabs = [
   "Home",
@@ -28,46 +40,84 @@ const tabs = [
   "Food",
   "Entertainment",
 ];
+
+const selected = ref(props.modelValue);
+const isMobile = ref(false);
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth < 640;
+};
+
+onMounted(() => {
+  selected.value = props.modelValue;
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkMobile);
+});
+
+watch(
+  () => props.modelValue,
+  (val) => {
+    selected.value = val;
+  }
+);
 </script>
 
 <style scoped>
 .tab-nav {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabs {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 1rem;
-}
-
-.tab-nav ul {
-  display: flex;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
+  gap: 1.5rem;
   list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
-.tab-nav li {
-  position: relative;
-  padding: 0.5rem 0;
+.tabs li {
   cursor: pointer;
   font-size: 14px;
-  color: #666;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  color: #6b7280;
+  padding-bottom: 6px;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
-.tab-nav li.active {
+.tabs li:hover {
+  color: #111827;
+}
+
+.tabs li.active {
   color: #0096e6;
   font-weight: 600;
 }
 
-.tab-nav li.active::after {
+.tabs li.active::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 0;
   bottom: -6px;
-  height: 3px;
+  width: 100%;
+  height: 2px;
   background-color: #0096e6;
-  border-radius: 2px;
+  border-radius: 1px;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #111827;
 }
 </style>
