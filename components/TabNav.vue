@@ -1,13 +1,15 @@
 <template>
   <nav class="tab-nav">
-    <button
-      v-for="tab in tabs"
-      :key="tab"
-      :class="['tab-button', { active: tab === modelValue }]"
-      @click="$emit('update:modelValue', tab)"
-    >
-      {{ tab }}
-    </button>
+    <ul>
+      <li
+        v-for="tab in tabs"
+        :key="tab"
+        :class="{ active: tab === modelValue }"
+        @click="$emit('update:modelValue', tab)"
+      >
+        {{ tab }}
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -31,31 +33,41 @@ const tabs = [
 <style scoped>
 .tab-nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 
-.tab-button {
-  padding: 8px 16px;
-  font-size: 0.875rem;
-  border: 1px solid #ccc;
-  border-radius: 9999px;
-  background-color: #f3f4f6;
-  color: #374151;
+.tab-nav ul {
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tab-nav li {
+  position: relative;
+  padding: 0.5rem 0;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.tab-button:hover {
-  background-color: #e5e7eb;
-}
-
-.tab-button.active {
-  background-color: #2563eb;
-  color: white;
+.tab-nav li.active {
+  color: #0096e6;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-nav li.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 3px;
+  background-color: #0096e6;
+  border-radius: 2px;
 }
 </style>
