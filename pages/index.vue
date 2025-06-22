@@ -6,18 +6,14 @@
     <div class="content-panel">
       <TabNav v-model="selectedTab" />
 
-      <div class="grid-layout">
-        <!-- Left Column -->
-        <div class="left-column">
-          <FeaturedCarousel :stories="featuredStories" />
+      <div class="news-grid">
+        <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
-          <CompactRelatedStories :stories="compactRelatedStories" />
-        </div>
-
-        <!-- Right Column -->
-        <div class="right-column">
-          <RelatedStories :stories="relatedStories" />
-        </div>
+        <NewsTile
+          v-for="(story, index) in otherStories"
+          :key="index"
+          v-bind="story"
+        />
       </div>
     </div>
   </div>
@@ -28,16 +24,17 @@ const selectedTab = ref("Home");
 
 const { data: newsData } = await useFetch("/api/newsData");
 
-const featuredStories = computed(() =>
-  newsData.value?.[selectedTab.value]?.slice(0, 3)
+const featuredStory = computed(
+  () => newsData.value?.[selectedTab.value]?.[0] || {}
 );
-const compactRelatedStories = computed(() =>
-  newsData.value?.[selectedTab.value]?.slice(3, 6)
+const otherStories = computed(
+  () => newsData.value?.[selectedTab.value]?.slice(1) || []
 );
-const relatedStories = computed(() =>
-  newsData.value?.[selectedTab.value]?.slice(6)
+const relatedStories = computed(
+  () => newsData.value?.[selectedTab.value]?.slice(4) || []
 );
 </script>
+
 <style scoped>
 .page-wrapper {
   width: 100%;
@@ -64,19 +61,9 @@ const relatedStories = computed(() =>
   align-items: flex-start;
 }
 
-.left-column {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.right-column {
-  flex: 1;
-}
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -115,19 +102,6 @@ const relatedStories = computed(() =>
 
   .page-wrapper {
     padding: 1rem 0.5rem;
-  }
-}
-
-.two-col-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-  .two-col-grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>
