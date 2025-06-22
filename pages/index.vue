@@ -14,7 +14,6 @@
           v-bind="story"
         />
 
-        />
         <RelatedStories
           v-if="otherStories.length"
           :stories="otherStories"
@@ -39,11 +38,11 @@ const featuredStory = computed(
   () => newsData.value?.[selectedTab.value]?.[0] || {}
 );
 const secondStories = computed(
-  () => newsData.value?.[selectedTab.value]?.slice(1, 2) || []
+  () => newsData.value?.[selectedTab.value]?.slice(0, 2) || []
 );
 
 const otherStories = computed(
-  () => newsData.value?.[selectedTab.value]?.slice(3) || []
+  () => newsData.value?.[selectedTab.value]?.slice(4) || []
 );
 </script>
 
@@ -53,7 +52,6 @@ const otherStories = computed(
   display: flex;
   flex-direction: column;
   align-items: center;
-  outline: 1px solid red;
   padding: 1rem;
 }
 

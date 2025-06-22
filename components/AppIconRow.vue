@@ -26,9 +26,21 @@ onMounted(async () => {
 .icon-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 50px;
   justify-content: center;
   align-items: center;
   padding: 12px 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .icon-row {
+    gap: 8px;
+    padding: 8px;
+  }
 }
 </style>
