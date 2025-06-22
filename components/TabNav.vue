@@ -80,7 +80,8 @@ watch(
 }
 
 .tabs li:hover {
-  color: #111827;
+  color: var(--color-primary);
+  transition: color 0.2s ease;
 }
 
 .tabs li.active {

@@ -20,8 +20,14 @@ html, body {
 
 
 :root {
-  --color-primary: ##0096e6;
+  --color-primary: #0096e6;
   --color-text: #000000;
   --color-secondary: #6b7280;
   --spacing-sm: 8px;
+  --tile-bg-color: #ffffff;
+  --tile-border-radius: 12px;
+  --tile-height: 330px;
+  --tile-box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --tile-box-shadow-heavy: 0 6px 16px rgba(0, 0, 0, 0.06);
+  --tile-transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

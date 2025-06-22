@@ -18,25 +18,32 @@
       <div v-else class="news-grid">
         <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
-        <!-- Example: show fewer secondStories on mobile -->
         <NewsTile
           v-for="(story, index) in isMobile
             ? secondStories.slice(0, 1)
             : secondStories"
-          :key="index"
+          :key="'second-' + index"
           v-bind="story"
         />
 
+        <!-- Only show RelatedStories here if isDesktop -->
         <RelatedStories
-          v-if="otherStories.length"
+          v-if="isDesktop && otherStories.length"
           :stories="otherStories"
           class="related-stories"
         />
 
         <NewsTile
           v-for="(story, index) in otherStories"
-          :key="index"
+          :key="'other-' + index"
           v-bind="story"
+        />
+
+        <!-- If NOT desktop, RelatedStories shows AFTER all NewsTiles -->
+        <RelatedStories
+          v-if="!isDesktop && otherStories.length"
+          :stories="otherStories"
+          class="related-stories"
         />
       </div>
     </div>
@@ -44,8 +51,6 @@
 </template>
 
 <script setup>
-import { useIsMobile } from "~/composables/useIsMobile";
-
 const selectedTab = ref("Home");
 const { data: icons } = await useFetch("/api/icons");
 const { data: newsData } = await useFetch("/api/newsData");
@@ -54,14 +59,15 @@ const featuredStory = computed(
   () => newsData.value?.[selectedTab.value]?.[0] || []
 );
 const secondStories = computed(
-  () => newsData.value?.[selectedTab.value]?.slice(0, 2) || []
+  () => newsData.value?.[selectedTab.value]?.slice(1, 3) || []
 );
 
 const otherStories = computed(
   () => newsData.value?.[selectedTab.value]?.slice(4) || []
 );
 
-const { isMobile } = useIsMobile();
+const { isMobile, isDesktop } = useIsMobile();
+console.log("isDesktop:", isDesktop);
 </script>
 
 <style scoped>

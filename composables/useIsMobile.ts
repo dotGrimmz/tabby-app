@@ -3,25 +3,47 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 export function useIsMobile() {
   const isMobile = ref(false)
-  let mediaQuery: MediaQueryList | null = null
+  const isTablet = ref(false)
+
+  let mobileQuery: MediaQueryList | null = null
+  let tabletQuery: MediaQueryList | null = null
 
   const updateIsMobile = (e?: MediaQueryListEvent) => {
     if (e) {
       isMobile.value = e.matches
-    } else if (mediaQuery) {
-      isMobile.value = mediaQuery.matches
+    } else if (mobileQuery) {
+      isMobile.value = mobileQuery.matches
+    }
+  }
+
+  const updateIsTablet = (e?: MediaQueryListEvent) => {
+    if (e) {
+      isTablet.value = e.matches
+    } else if (tabletQuery) {
+      isTablet.value = tabletQuery.matches
     }
   }
 
   onMounted(() => {
-    mediaQuery = window.matchMedia('(max-width: 640px)')
+    mobileQuery = window.matchMedia('(max-width: 640px)')
+    tabletQuery = window.matchMedia('(max-width: 1020px)')
+
     updateIsMobile()
-    mediaQuery.addEventListener('change', updateIsMobile)
+    updateIsTablet()
+
+    mobileQuery.addEventListener('change', updateIsMobile)
+    tabletQuery.addEventListener('change', updateIsTablet)
   })
 
   onBeforeUnmount(() => {
-    mediaQuery?.removeEventListener('change', updateIsMobile)
+    mobileQuery?.removeEventListener('change', updateIsMobile)
+    tabletQuery?.removeEventListener('change', updateIsTablet)
   })
 
-  return { isMobile }
+    const isDesktop = computed(() => !isMobile.value && !isTablet.value)
+
+
+  return { isMobile, isTablet,
+    isDesktop
+  }
 }
