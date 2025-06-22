@@ -17,3 +17,11 @@ html, body {
   box-sizing: inherit;
 }
 
+
+
+:root {
+  --color-primary: ##0096e6;
+  --color-text: #000000;
+  --color-secondary: #6b7280;
+  --spacing-sm: 8px;
+}

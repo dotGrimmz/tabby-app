@@ -1,15 +1,15 @@
 <template>
   <a :href="url" class="app-icon" target="_blank" rel="noopener noreferrer">
     <img :src="src" :alt="name" width="48" height="48" />
-    <span>{{ name }}</span>
+    <span class="icon-text">{{ name }}</span>
   </a>
 </template>
 
 <script setup>
 const props = defineProps({
   name: String,
-  icon: String,
-  link: String,
+  url: String,
+  src: String,
 });
 </script>
 
@@ -23,6 +23,7 @@ const props = defineProps({
   font-size: 12px;
   cursor: pointer;
   text-decoration: none;
+  color: black;
 }
 
 .app-icon-wrapper {
@@ -57,6 +58,6 @@ const props = defineProps({
   transition: color 0.3s ease;
 }
 .app-icon:hover .icon-text {
-  color: lightgreen;
+  color: var(--color-primary);
 }
 </style>
