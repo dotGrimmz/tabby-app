@@ -1,19 +1,19 @@
 <template>
   <div class="page-wrapper">
     <SearchBar />
-    <AppIconRow />
+    <div>
+      <AppIconRow v-if="icons" :icons="icons" />
+      <div v-else>Loading icons...</div>
+    </div>
 
     <div class="content-panel">
       <TabNav v-model="selectedTab" />
 
-      <!-- Show loading skeleton when newsData is not ready -->
       <div v-if="!newsData || !newsData[selectedTab]" class="news-grid loading">
-        <!-- Example: Show simple skeleton loaders for FeaturedNewsTile and NewsTile -->
         <SkeletonLoader class="featured" />
         <SkeletonLoader v-for="n in 3" :key="n" />
       </div>
 
-      <!-- Show actual content once newsData is ready -->
       <div v-else class="news-grid">
         <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
@@ -41,9 +41,9 @@
 
 <script setup>
 const selectedTab = ref("Home");
+const { data: icons } = await useFetch("/api/icons");
 
 const { data: newsData } = await useFetch("/api/newsData");
-const { data: icons, pending, error } = useFetch("/api/icons");
 
 const featuredStory = computed(
   () => newsData.value?.[selectedTab.value]?.[0] || []

@@ -1,24 +1,22 @@
 <script setup>
-import SkeletonLoader from "~/components/SkeletonLoader.vue";
-
-// Use useAsyncData for better SSR support
-const {
-  data: icons,
-  pending,
-  error,
-} = await useAsyncData("icons", () => $fetch("/mock/icons.json"));
+const props = defineProps({
+  icons: {
+    type: Array,
+    required: true,
+    validator: (arr) =>
+      arr.every(
+        (item) =>
+          typeof item.name === "string" &&
+          typeof item.url === "string" &&
+          typeof item.src === "string"
+      ),
+  },
+});
 </script>
-
 <template>
-  <div class="icon-row-wrapper">
-    <!-- Show skeleton while loading or errored -->
-    <SkeletonLoader v-if="pending || error || !icons || icons.length === 0" />
-
-    <!-- Only render icons once fully loaded -->
-    <div v-else class="icon-row">
-      <AppIcon v-for="icon in icons" :key="icon.name" v-bind="icon" />
-      <AppIcon name="Add" icon="/images/add.png" link="#" />
-    </div>
+  <div class="icon-row">
+    <AppIcon v-for="icon in icons" :key="icon.name" v-bind="icon" />
+    <AppIcon name="Add" src="/icons/add.png" url="#" />
   </div>
 </template>
 
