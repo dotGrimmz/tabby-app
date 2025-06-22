@@ -6,7 +6,15 @@
     <div class="content-panel">
       <TabNav v-model="selectedTab" />
 
-      <div class="news-grid">
+      <!-- Show loading skeleton when newsData is not ready -->
+      <div v-if="!newsData || !newsData[selectedTab]" class="news-grid loading">
+        <!-- Example: Show simple skeleton loaders for FeaturedNewsTile and NewsTile -->
+        <SkeletonLoader class="featured" />
+        <SkeletonLoader v-for="n in 3" :key="n" />
+      </div>
+
+      <!-- Show actual content once newsData is ready -->
+      <div v-else class="news-grid">
         <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
         <NewsTile
@@ -20,6 +28,7 @@
           :stories="otherStories"
           class="related-stories"
         />
+
         <NewsTile
           v-for="(story, index) in otherStories"
           :key="index"
@@ -34,6 +43,7 @@
 const selectedTab = ref("Home");
 
 const { data: newsData } = await useFetch("/api/newsData");
+const { data: icons, pending, error } = useFetch("/api/icons");
 
 const featuredStory = computed(
   () => newsData.value?.[selectedTab.value]?.[0] || []

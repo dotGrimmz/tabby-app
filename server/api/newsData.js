@@ -1,8 +1,5 @@
 export default defineEventHandler(() => {
   return {
-    // Add a unique `id` property to each item in the Home array that is a number of 5 digits
-    // This will help in identifying each item uniquely
-
     Home: [
       {
         id: 10001,

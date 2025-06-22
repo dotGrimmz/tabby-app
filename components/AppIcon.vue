@@ -1,9 +1,7 @@
 <template>
-  <a :href="link" target="_blank" rel="noopener noreferrer" class="app-icon">
-    <div class="app-icon-wrapper">
-      <img :src="icon" :alt="name" />
-    </div>
-    <p class="icon-text">{{ name }}</p>
+  <a :href="url" class="app-icon" target="_blank" rel="noopener noreferrer">
+    <img :src="src" :alt="name" width="48" height="48" />
+    <span>{{ name }}</span>
   </a>
 </template>
 
