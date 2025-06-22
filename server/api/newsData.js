@@ -3,7 +3,7 @@ export default defineEventHandler(() => {
     Home: [
       {
         title: "Vue 3.5 Announced with Performance Boost",
-        source: "https://tomaszs2.medium.com/vue-3-5-a-leap-forward-with-performance-boosts-and-new-features-9818e76c0a5b",
+        source: "https://tomaszs2.medium.com",
         tag: "Sponsored",
         timestamp: "1h ago",
         image: "/images/vue3.jpg"
@@ -20,33 +20,74 @@ export default defineEventHandler(() => {
         source: "greentech.org",
         tag: "Environment",
         timestamp: "6h ago",
-        image: "https://source.unsplash.com/featured/?solar"
+        image: "/images/greentech.jpg"
       }, {
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
         timestamp: "6h ago",
-        image: "https://source.unsplash.com/featured/?solar"
+        image: "/images/minimalism.jpg"
       },
        {
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
         timestamp: "6h ago",
-        image: "https://source.unsplash.com/featured/?solar"
+        image: "/images/sinners.jpg"
       }, {
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
         timestamp: "6h ago",
-        image: "https://source.unsplash.com/featured/?solar"
+        image: "/images/minimalism.jpg"
       },
        {
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
         timestamp: "6h ago",
-        image: "https://source.unsplash.com/featured/?solar"
+        image: "/images/greentech.jpg"
+      }
+      ,
+       {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "/images/sinners.jpg"
+      }, {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "/images/minimalism.jpg"
+      },
+       {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "/images/greentech.jpg"
+      },
+       {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "/images/sinners.jpg"
+      }, {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "/images/minimalism.jpg"
+      },
+       {
+        title: "How Solar Energy is Shaping the Future",
+        source: "greentech.org",
+        tag: "Environment",
+        timestamp: "6h ago",
+        image: "/images/greentech.jpg"
       }
     ],
     News: [

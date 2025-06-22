@@ -1,5 +1,5 @@
 <template>
-  <aside v-if="stories?.length" class="related-stories">
+  <div v-if="stories?.length" class="related-stories">
     <h3 class="heading">Related Stories</h3>
     <ul class="story-list">
       <li v-for="(story, i) in stories" :key="i" class="story-item">
@@ -17,7 +17,7 @@
         </a>
       </li>
     </ul>
-  </aside>
+  </div>
 </template>
 
 <script setup>
@@ -30,19 +30,52 @@ defineProps({
 .related-stories {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-
+  height: 330px;
+  overflow-y: scroll; /* always reserve space */
   border: 1px solid #eee;
   border-radius: 8px;
   background-color: #f9fafb;
-  margin-top: 1.5rem;
+  direction: rtl;
+
+  scrollbar-width: none; /* Firefox: visually hidden */
+}
+
+.related-stories:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Flip content back to normal direction */
+.related-stories > * {
+  direction: ltr;
+}
+
+/* WebKit browsers: keep space reserved, hide scrollbar by default */
+.related-stories::-webkit-scrollbar {
+  width: 8px;
+}
+
+.related-stories::-webkit-scrollbar-thumb {
+  background-color: transparent; /* hidden initially */
+}
+
+/* Show scrollbar on hover */
+.related-stories:hover::-webkit-scrollbar-thumb {
+  background-color: #ccc;
 }
 
 .heading {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
   color: #2563eb;
   margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: #f9fafb; /* Matches .related-stories background */
+  padding: 0.75rem 0;
+  z-index: 1;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .row {

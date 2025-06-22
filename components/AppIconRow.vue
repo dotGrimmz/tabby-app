@@ -8,7 +8,6 @@ onMounted(async () => {
   try {
     const res = await fetch("/mock/icons.json");
     icons.value = await res.json();
-    console.log("Loaded icons:", icons.value);
   } catch (error) {
     console.error("Failed to load icons:", error);
   }

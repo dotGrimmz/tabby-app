@@ -20,9 +20,9 @@ defineProps({
 </script>
 
 <style scoped>
-.compact-list {
+/* .compact-list {
   margin-top: 2rem;
-}
+} */
 
 .section-title {
   font-size: 1rem;
@@ -51,7 +51,7 @@ defineProps({
 }
 
 .story-link:hover {
-  color: #10b981; /* emerald-500 */
+  color: #10b981;
 }
 
 .timestamp {

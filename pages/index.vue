@@ -8,6 +8,7 @@
 
       <div class="news-grid">
         <FeaturedNewsTile class="featured" v-bind="featuredStory" />
+
         <NewsTile
           v-for="(story, index) in secondStories"
           :key="index"
@@ -44,6 +45,7 @@ const secondStories = computed(
 const otherStories = computed(
   () => newsData.value?.[selectedTab.value]?.slice(4) || []
 );
+console.log(otherStories.value, "other stories");
 </script>
 
 <style scoped>
@@ -76,13 +78,11 @@ const otherStories = computed(
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
+  align-items: start;
 }
 
 .featured {
   grid-column: span 2;
-}
-.related-stories {
-  margin-top: 2rem;
 }
 
 /* Responsive layout */

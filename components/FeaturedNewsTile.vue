@@ -43,6 +43,7 @@ const { trackClick } = useTracking(tileRef, props.title);
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease;
+  height: 330px;
 }
 
 .featured-news-tile:hover {
@@ -51,7 +52,7 @@ const { trackClick } = useTracking(tileRef, props.title);
 
 .featured-img {
   width: 100%;
-  height: 220px;
+  height: 180px;
   object-fit: cover;
   display: block;
 }
@@ -65,6 +66,7 @@ const { trackClick } = useTracking(tileRef, props.title);
   font-weight: bold;
   color: #10b981; /* Tailwind green-500 */
   margin-bottom: 0.25rem;
+  padding-top: 0;
 }
 
 .title {
@@ -76,5 +78,6 @@ const { trackClick } = useTracking(tileRef, props.title);
 .meta {
   font-size: 0.875rem;
   color: #6b7280;
+  margin-bottom: 2rem;
 }
 </style>
