@@ -7,13 +7,19 @@
       <TabNav v-model="selectedTab" />
 
       <div class="news-grid">
+        <FeaturedNewsTile class="featured" v-bind="featuredStory" />
+        <NewsTile
+          v-for="(story, index) in secondStories"
+          :key="index"
+          v-bind="story"
+        />
+
+        />
         <RelatedStories
-          v-if="relatedStories.length"
-          :stories="relatedStories"
+          v-if="otherStories.length"
+          :stories="otherStories"
           class="related-stories"
         />
-        <FeaturedNewsTile class="featured" v-bind="featuredStory" />
-
         <NewsTile
           v-for="(story, index) in otherStories"
           :key="index"
@@ -32,11 +38,12 @@ const { data: newsData } = await useFetch("/api/newsData");
 const featuredStory = computed(
   () => newsData.value?.[selectedTab.value]?.[0] || {}
 );
-const otherStories = computed(
-  () => newsData.value?.[selectedTab.value]?.slice(1) || []
+const secondStories = computed(
+  () => newsData.value?.[selectedTab.value]?.slice(1, 2) || []
 );
-const relatedStories = computed(
-  () => newsData.value?.[selectedTab.value]?.slice(4) || []
+
+const otherStories = computed(
+  () => newsData.value?.[selectedTab.value]?.slice(3) || []
 );
 </script>
 

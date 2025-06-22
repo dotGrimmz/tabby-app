@@ -69,7 +69,6 @@ watch(
 <style scoped>
 .tab-nav {
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e5e7eb;
 }
 
 .tabs {
@@ -89,6 +88,8 @@ watch(
   padding-bottom: 6px;
   position: relative;
   transition: color 0.2s ease;
+  min-width: 80px;
+  text-align: center;
 }
 
 .tabs li:hover {
