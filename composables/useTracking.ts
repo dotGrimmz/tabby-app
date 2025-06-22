@@ -1,12 +1,15 @@
-import { onMounted } from 'vue';
 
-export function useTracking(elRef: globalThis.Ref<null, null>, title: string | undefined) {
+
+export function useTracking(elRef: Ref<HTMLElement | null>, title: string | undefined, id: number | undefined) {
+  const { addLog } = useErrorLogger();
+
   const trackTileShown = () => {
-    console.log('tile_shown', title);
+    console.log('Tile shown:', title, id);
+    addLog('info', 'tile_shown', { title, id });
   };
 
   const trackClick = () => {
-    console.log('tile_clicked', title);
+    addLog('info', 'tile_clicked', { title, id });
   };
 
   onMounted(() => {
@@ -16,7 +19,7 @@ export function useTracking(elRef: globalThis.Ref<null, null>, title: string | u
       ([entry]) => {
         if (entry.isIntersecting) {
           trackTileShown();
-          observer.disconnect(); // Ensures only tracked once
+          observer.disconnect(); // Ensures event fires only once
         }
       },
       { threshold: 0.5 }
@@ -25,5 +28,5 @@ export function useTracking(elRef: globalThis.Ref<null, null>, title: string | u
     observer.observe(elRef.value);
   });
 
-return { trackTileShown, trackClick };
+  return { trackClick };
 }

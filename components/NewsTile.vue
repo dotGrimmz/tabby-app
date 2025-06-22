@@ -20,9 +20,16 @@
 import { ref, computed } from "vue";
 import { useTracking } from "@/composables/useTracking";
 
-const props = defineProps(["title", "source", "tag", "timestamp", "image"]);
+const props = defineProps([
+  "title",
+  "source",
+  "tag",
+  "timestamp",
+  "image",
+  "id",
+]);
 const tileRef = ref(null);
-const { trackTileShown, trackClick } = useTracking(tileRef, props.title);
+const { trackClick } = useTracking(tileRef, props.title, props.id);
 
 const cleanSource = computed(() => {
   try {

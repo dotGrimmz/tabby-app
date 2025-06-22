@@ -1,11 +1,3 @@
-<script setup>
-const props = defineProps({
-  name: String,
-  icon: String,
-  link: String,
-});
-</script>
-
 <template>
   <a :href="link" target="_blank" rel="noopener noreferrer" class="app-icon">
     <div class="app-icon-wrapper">
@@ -14,6 +6,14 @@ const props = defineProps({
     <p class="icon-text">{{ name }}</p>
   </a>
 </template>
+
+<script setup>
+const props = defineProps({
+  name: String,
+  icon: String,
+  link: String,
+});
+</script>
 
 <style scoped>
 .app-icon {
@@ -29,23 +29,23 @@ const props = defineProps({
 
 .app-icon-wrapper {
   background-color: white;
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Subtle shadow for "raised" effect */
-  padding-top: 8px; /* Adds spacing inside the element */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding-top: 8px;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
-  width: 60px; /* Fixed width for consistency */
-  height: 60px; /* Fixed height for consistency */
+  width: 60px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px; /* Space between icon and text */
-  border: 1px solid #e5e7eb; /* Light border for better visibility */
+  margin-bottom: 8px;
+  border: 1px solid #e5e7eb;
 }
 
 .app-icon-wrapper:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 .app-icon img {
   width: 25px;

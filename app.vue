@@ -1,8 +1,10 @@
 <!-- app.vue -->
 <template>
-  <div class="app-background">
-    <NuxtPage />
-  </div>
+  <ErrorBoundary>
+    <div class="app-background">
+      <NuxtPage />
+    </div>
+  </ErrorBoundary>
 </template>
 
 <style>

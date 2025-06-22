@@ -45,7 +45,6 @@ const secondStories = computed(
 const otherStories = computed(
   () => newsData.value?.[selectedTab.value]?.slice(4) || []
 );
-console.log(otherStories.value, "other stories");
 </script>
 
 <style scoped>

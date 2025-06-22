@@ -1,7 +1,11 @@
 export default defineEventHandler(() => {
   return {
+    // Add a unique `id` property to each item in the Home array that is a number of 5 digits
+    // This will help in identifying each item uniquely
+
     Home: [
       {
+        id: 10001,
         title: "Vue 3.5 Announced with Performance Boost",
         source: "https://tomaszs2.medium.com",
         tag: "Sponsored",
@@ -9,12 +13,14 @@ export default defineEventHandler(() => {
         image: "/images/vue3.jpg",
       },
       {
+        id: 10002,
         title: "Remote Work Trends for 2025",
         source: "remoteworkweekly.com",
         timestamp: "3h ago",
         image: "/images/vue3.jpg",
       },
       {
+        id: 10003,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -22,6 +28,7 @@ export default defineEventHandler(() => {
         image: "/images/greentech.jpg",
       },
       {
+        id: 10004,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -29,6 +36,7 @@ export default defineEventHandler(() => {
         image: "/images/minimalism.jpg",
       },
       {
+        id: 10005,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -36,6 +44,7 @@ export default defineEventHandler(() => {
         image: "/images/sinners.jpg",
       },
       {
+        id: 10006,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -43,6 +52,7 @@ export default defineEventHandler(() => {
         image: "/images/minimalism.jpg",
       },
       {
+        id: 10007,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -50,6 +60,7 @@ export default defineEventHandler(() => {
         image: "/images/greentech.jpg",
       },
       {
+        id: 10008,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -57,6 +68,7 @@ export default defineEventHandler(() => {
         image: "/images/sinners.jpg",
       },
       {
+        id: 10009,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -64,6 +76,7 @@ export default defineEventHandler(() => {
         image: "/images/minimalism.jpg",
       },
       {
+        id: 10010,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -71,6 +84,7 @@ export default defineEventHandler(() => {
         image: "/images/greentech.jpg",
       },
       {
+        id: 10011,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -78,6 +92,7 @@ export default defineEventHandler(() => {
         image: "/images/sinners.jpg",
       },
       {
+        id: 10012,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -85,6 +100,7 @@ export default defineEventHandler(() => {
         image: "/images/minimalism.jpg",
       },
       {
+        id: 10013,
         title: "How Solar Energy is Shaping the Future",
         source: "greentech.org",
         tag: "Environment",
@@ -94,12 +110,14 @@ export default defineEventHandler(() => {
     ],
     News: [
       {
+        id: 10014,
         title: "2025 Midterm Elections Preview",
         source: "dailyreport.com",
         timestamp: "2h ago",
         image: "/images/2025midterm.jpg",
       },
       {
+        id: 10015,
         title: "Climate Changes Impacting Global Crops",
         source: "climatebeat.org",
         tag: "Climate",
@@ -107,6 +125,7 @@ export default defineEventHandler(() => {
         image: "/images/climate.jpg",
       },
       {
+        id: 10016,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
@@ -114,6 +133,7 @@ export default defineEventHandler(() => {
         image: "/images/ai.jpg",
       },
       {
+        id: 10017,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
@@ -121,6 +141,7 @@ export default defineEventHandler(() => {
         image: "/images/ai2.jpg",
       },
       {
+        id: 10018,
         title: "Climate Changes Impacting Global Crops",
         source: "climatebeat.org",
         tag: "Climate",
@@ -128,6 +149,7 @@ export default defineEventHandler(() => {
         image: "/images/climate.jpg",
       },
       {
+        id: 10019,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
@@ -135,14 +157,15 @@ export default defineEventHandler(() => {
         image: "/images/ai.jpg",
       },
       {
+        id: 10020,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
         timestamp: "5h ago",
         image: "/images/ai2.jpg",
       },
-
       {
+        id: 10021,
         title: "Climate Changes Impacting Global Crops",
         source: "climatebeat.org",
         tag: "Climate",
@@ -150,6 +173,7 @@ export default defineEventHandler(() => {
         image: "/images/climate.jpg",
       },
       {
+        id: 10022,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
@@ -157,14 +181,15 @@ export default defineEventHandler(() => {
         image: "/images/ai.jpg",
       },
       {
+        id: 10023,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
         timestamp: "5h ago",
         image: "/images/ai2.jpg",
       },
-
       {
+        id: 10024,
         title: "Climate Changes Impacting Global Crops",
         source: "climatebeat.org",
         tag: "Climate",
@@ -172,6 +197,7 @@ export default defineEventHandler(() => {
         image: "/images/climate.jpg",
       },
       {
+        id: 10025,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
@@ -179,6 +205,7 @@ export default defineEventHandler(() => {
         image: "/images/ai.jpg",
       },
       {
+        id: 10026,
         title: "Breakthrough in AI-Powered Healthcare",
         source: "healthtechnews.com",
         tag: "Health",
@@ -188,18 +215,21 @@ export default defineEventHandler(() => {
     ],
     Sports: [
       {
+        id: 10027,
         title: "Champions League Final Set for June 2025",
         source: "sportshub.com",
         timestamp: "30m ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10028,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10029,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
@@ -207,12 +237,14 @@ export default defineEventHandler(() => {
         image: "/images/champions.jpg",
       },
       {
+        id: 10030,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10031,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
@@ -220,60 +252,70 @@ export default defineEventHandler(() => {
         image: "/images/champions.jpg",
       },
       {
+        id: 10032,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10033,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10034,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10035,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10036,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10037,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10038,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10039,
+        title: "Marathon Training Tips for Beginners",
+        source: "runfastmag.com",
+        tag: "Fitness",
+        timestamp: "4h ago",
+        image: "/images/champions.jpg",
+      },
+      {
+        id: 10040,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
@@ -283,12 +325,14 @@ export default defineEventHandler(() => {
     ],
     Money: [
       {
+        id: 10041,
         title: "Stock Market Rally Expected to Continue",
         source: "financenews.com",
         timestamp: "1h ago",
         image: "/images/stocks.jpg",
       },
       {
+        id: 10042,
         title: "Cryptocurrency Regulations Tighten Worldwide",
         source: "cryptoinsights.org",
         tag: "Crypto",
@@ -296,13 +340,14 @@ export default defineEventHandler(() => {
         image: "/images/stocks.jpg",
       },
       {
+        id: 10043,
         title: "Tips for Saving More on Your Taxes",
         source: "moneymatters.com",
         timestamp: "5h ago",
         image: "/images/stocks.jpg",
       },
-
       {
+        id: 10044,
         title: "Cryptocurrency Regulations Tighten Worldwide",
         source: "cryptoinsights.org",
         tag: "Crypto",
@@ -310,13 +355,14 @@ export default defineEventHandler(() => {
         image: "/images/stocks.jpg",
       },
       {
+        id: 10045,
         title: "Tips for Saving More on Your Taxes",
         source: "moneymatters.com",
         timestamp: "5h ago",
         image: "/images/stocks.jpg",
       },
-
       {
+        id: 10046,
         title: "Cryptocurrency Regulations Tighten Worldwide",
         source: "cryptoinsights.org",
         tag: "Crypto",
@@ -324,6 +370,7 @@ export default defineEventHandler(() => {
         image: "/images/stocks.jpg",
       },
       {
+        id: 10047,
         title: "Tips for Saving More on Your Taxes",
         source: "moneymatters.com",
         timestamp: "5h ago",
@@ -332,6 +379,7 @@ export default defineEventHandler(() => {
     ],
     Lifestyle: [
       {
+        id: 10048,
         title: "Minimalism: The Art of Living With Less",
         source: "lifestyletoday.com",
         tag: "Wellness",
@@ -339,26 +387,14 @@ export default defineEventHandler(() => {
         image: "/images/minimalism.jpg",
       },
       {
+        id: 10049,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
-        title: "Marathon Training Tips for Beginners",
-        source: "runfastmag.com",
-        tag: "Fitness",
-        timestamp: "4h ago",
-        image: "/images/champions.jpg",
-      },
-
-      {
-        title: "Top 10 NBA Draft Picks This Season",
-        source: "hoopsdaily.net",
-        timestamp: "2h ago",
-        image: "/images/champions.jpg",
-      },
-      {
+        id: 10050,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
@@ -366,26 +402,44 @@ export default defineEventHandler(() => {
         image: "/images/champions.jpg",
       },
       {
+        id: 10051,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10052,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-
       {
+        id: 10053,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10054,
+        title: "Marathon Training Tips for Beginners",
+        source: "runfastmag.com",
+        tag: "Fitness",
+        timestamp: "4h ago",
+        image: "/images/champions.jpg",
+      },
+      {
+        id: 10055,
+        title: "Top 10 NBA Draft Picks This Season",
+        source: "hoopsdaily.net",
+        timestamp: "2h ago",
+        image: "/images/champions.jpg",
+      },
+      {
+        id: 10056,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
@@ -395,88 +449,96 @@ export default defineEventHandler(() => {
     ],
     Politics: [
       {
+        id: 10057,
         title: "New Policies Aim to Improve Urban Infrastructure",
         source: "policywatch.com",
         timestamp: "1h ago",
         image: "/images/politics.jpg",
       },
       {
+        id: 10058,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10059,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-
       {
+        id: 10060,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10061,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10062,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10063,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10064,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10065,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10066,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10067,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
         timestamp: "4h ago",
         image: "/images/champions.jpg",
       },
-      ,
       {
+        id: 10068,
         title: "Top 10 NBA Draft Picks This Season",
         source: "hoopsdaily.net",
         timestamp: "2h ago",
         image: "/images/champions.jpg",
       },
       {
+        id: 10069,
         title: "Marathon Training Tips for Beginners",
         source: "runfastmag.com",
         tag: "Fitness",
@@ -486,6 +548,7 @@ export default defineEventHandler(() => {
     ],
     Health: [
       {
+        id: 10070,
         title: "New Research on the Benefits of Meditation",
         source: "wellnessdaily.com",
         tag: "Mindfulness",
@@ -493,36 +556,42 @@ export default defineEventHandler(() => {
         image: "/images/meditation.jpg",
       },
       {
+        id: 10071,
         title: "The Rise of Telehealth Services in 2025",
         source: "healthtechnews.com",
         timestamp: "4h ago",
         image: "/images/ai.jpg",
       },
       {
+        id: 10072,
         title: "Superfoods to Boost Your Immune System",
         source: "nutritiontoday.org",
         timestamp: "6h ago",
         image: "/images/ai.jpg",
       },
       {
+        id: 10073,
         title: "Superfoods to Boost Your Immune System",
         source: "nutritiontoday.org",
         timestamp: "6h ago",
         image: "/images/ai.jpg",
       },
       {
+        id: 10074,
         title: "Superfoods to Boost Your Immune System",
         source: "nutritiontoday.org",
         timestamp: "6h ago",
         image: "https://source.unsplash.com/featured/?superfoods",
       },
       {
+        id: 10075,
         title: "Superfoods to Boost Your Immune System",
         source: "nutritiontoday.org",
         timestamp: "6h ago",
         image: "https://source.unsplash.com/featured/?superfoods",
       },
       {
+        id: 10076,
         title: "Superfoods to Boost Your Immune System",
         source: "nutritiontoday.org",
         timestamp: "6h ago",
@@ -531,12 +600,14 @@ export default defineEventHandler(() => {
     ],
     Food: [
       {
+        id: 10091,
         title: "Exploring Exotic Flavors: A Culinary Journey",
         source: "foodlover.com",
         timestamp: "1h ago",
         image: "/images/food.jpg",
       },
       {
+        id: 10092,
         title: "The Best Summer Cocktails to Try This Year",
         source: "mixologyworld.net",
         tag: "Drinks",
@@ -544,30 +615,35 @@ export default defineEventHandler(() => {
         image: "/images/ai2.jpg",
       },
       {
+        id: 10093,
         title: "Plant-Based Diets: Benefits and Recipes",
         source: "healthyeats.org",
         timestamp: "5h ago",
         image: "/images/ai2.jpg",
       },
       {
+        id: 10094,
         title: "Plant-Based Diets: Benefits and Recipes",
         source: "healthyeats.org",
         timestamp: "5h ago",
         image: "https://source.unsplash.com/featured/?plantbased",
       },
       {
+        id: 10095,
         title: "Plant-Based Diets: Benefits and Recipes",
         source: "healthyeats.org",
         timestamp: "5h ago",
         image: "https://source.unsplash.com/featured/?plantbased",
       },
       {
+        id: 10096,
         title: "Plant-Based Diets: Benefits and Recipes",
         source: "healthyeats.org",
         timestamp: "5h ago",
         image: "https://source.unsplash.com/featured/?plantbased",
       },
       {
+        id: 10097,
         title: "Plant-Based Diets: Benefits and Recipes",
         source: "healthyeats.org",
         timestamp: "5h ago",
@@ -576,18 +652,21 @@ export default defineEventHandler(() => {
     ],
     Entertainment: [
       {
+        id: 10084,
         title: "Top Box Office Hits of 2025",
         source: "moviebuzz.com",
         timestamp: "2h ago",
         image: "/images/sinners.jpg",
       },
       {
+        id: 10085,
         title: "Interview with Award-Winning Director",
         source: "cinephilemag.net",
         timestamp: "4h ago",
         image: "/images/greentech.jpg",
       },
       {
+        id: 10086,
         title: "Music Festivals to Watch This Summer",
         source: "festivalseason.com",
         tag: "Music",
@@ -595,6 +674,7 @@ export default defineEventHandler(() => {
         image: "/images/greentech.jpg",
       },
       {
+        id: 10087,
         title: "Music Festivals to Watch This Summer",
         source: "festivalseason.com",
         tag: "Music",
@@ -602,6 +682,7 @@ export default defineEventHandler(() => {
         image: "/images/greentech.jpg",
       },
       {
+        id: 10088,
         title: "Music Festivals to Watch This Summer",
         source: "festivalseason.com",
         tag: "Music",
@@ -609,6 +690,7 @@ export default defineEventHandler(() => {
         image: "/images/greentech.jpg",
       },
       {
+        id: 10089,
         title: "Music Festivals to Watch This Summer",
         source: "festivalseason.com",
         tag: "Music",
@@ -616,6 +698,7 @@ export default defineEventHandler(() => {
         image: "/images/greentech.jpg",
       },
       {
+        id: 10090,
         title: "Music Festivals to Watch This Summer",
         source: "festivalseason.com",
         tag: "Music",
