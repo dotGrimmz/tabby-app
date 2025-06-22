@@ -36,7 +36,7 @@ const selectedTab = ref("Home");
 const { data: newsData } = await useFetch("/api/newsData");
 
 const featuredStory = computed(
-  () => newsData.value?.[selectedTab.value]?.[0] || {}
+  () => newsData.value?.[selectedTab.value]?.[0] || []
 );
 const secondStories = computed(
   () => newsData.value?.[selectedTab.value]?.slice(0, 2) || []
