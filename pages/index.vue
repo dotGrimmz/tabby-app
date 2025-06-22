@@ -1,6 +1,7 @@
 <template>
   <div class="page-wrapper">
     <SearchBar />
+
     <div>
       <AppIconRow v-if="icons" :icons="icons" />
       <div v-else>Loading icons...</div>
@@ -17,8 +18,11 @@
       <div v-else class="news-grid">
         <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
+        <!-- Example: show fewer secondStories on mobile -->
         <NewsTile
-          v-for="(story, index) in secondStories"
+          v-for="(story, index) in isMobile
+            ? secondStories.slice(0, 1)
+            : secondStories"
           :key="index"
           v-bind="story"
         />
@@ -40,9 +44,10 @@
 </template>
 
 <script setup>
+import { useIsMobile } from "~/composables/useIsMobile";
+
 const selectedTab = ref("Home");
 const { data: icons } = await useFetch("/api/icons");
-
 const { data: newsData } = await useFetch("/api/newsData");
 
 const featuredStory = computed(
@@ -55,6 +60,8 @@ const secondStories = computed(
 const otherStories = computed(
   () => newsData.value?.[selectedTab.value]?.slice(4) || []
 );
+
+const { isMobile } = useIsMobile();
 </script>
 
 <style scoped>

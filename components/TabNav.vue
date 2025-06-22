@@ -17,15 +17,16 @@
       v-else
       v-model="selected"
       @change="$emit('update:modelValue', selected)"
+      class="opt"
     >
-      <option v-for="tab in tabs" :key="tab" :value="tab">{{ tab }}</option>
+      <option class="opt" v-for="tab in tabs" :key="tab" :value="tab">
+        {{ tab }}
+      </option>
     </select>
   </nav>
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from "vue";
-
 const props = defineProps(["modelValue"]);
 const emit = defineEmits(["update:modelValue"]);
 
@@ -42,21 +43,7 @@ const tabs = [
 ];
 
 const selected = ref(props.modelValue);
-const isMobile = ref(false);
-
-const checkMobile = () => {
-  isMobile.value = window.innerWidth < 640;
-};
-
-onMounted(() => {
-  selected.value = props.modelValue;
-  checkMobile();
-  window.addEventListener("resize", checkMobile);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", checkMobile);
-});
+const { isMobile } = useIsMobile();
 
 watch(
   () => props.modelValue,
@@ -120,5 +107,11 @@ select {
   border: 1px solid #d1d5db;
   background-color: #f9fafb;
   color: #111827;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.opt {
+  cursor: pointer;
 }
 </style>
