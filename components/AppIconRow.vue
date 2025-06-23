@@ -1,22 +1,19 @@
 <script setup>
+const { openModal } = useModal();
+function onAddClick() {
+  openModal();
+}
 const props = defineProps({
   icons: {
     type: Array,
     required: true,
-    validator: (arr) =>
-      arr.every(
-        (item) =>
-          typeof item.name === "string" &&
-          typeof item.url === "string" &&
-          typeof item.src === "string"
-      ),
   },
 });
 </script>
 <template>
   <div class="icon-row">
     <AppIcon v-for="icon in icons" :key="icon.name" v-bind="icon" />
-    <AppIcon name="Add" src="/icons/add.png" url="#" />
+    <AppIcon name="Add" src="/icons/add.png" @click.prevent="onAddClick" />
   </div>
 </template>
 

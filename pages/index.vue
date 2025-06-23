@@ -9,42 +9,40 @@
 
     <div class="content-panel">
       <TabNav v-if="hydrated" v-model="selectedTab" />
+      <SkeletonLoader type="dot-loader" width="100%" v-if="!hydrated" />
 
-      <div v-if="!newsData || !newsData[selectedTab]" class="news-grid loading">
-        <SkeletonLoader class="featured" />
-        <SkeletonLoader v-for="n in 3" :key="n" />
-      </div>
+      <div class="news-grid">
+        <SkeletonLoader v-if="!hydrated" width="100vw" height="60vh" />
 
-      <div v-else class="news-grid">
-        <FeaturedNewsTile class="featured" v-bind="featuredStory" />
+        <template v-else>
+          <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
-        <NewsTile
-          v-for="(story, index) in isMobile
-            ? secondStories.slice(0, 1)
-            : secondStories"
-          :key="'second-' + index"
-          v-bind="story"
-        />
+          <NewsTile
+            v-for="(story, index) in isMobile
+              ? secondStories.slice(0, 1)
+              : secondStories"
+            :key="'second-' + index"
+            v-bind="story"
+          />
 
-        <!-- Only show RelatedStories here if isDesktop -->
-        <RelatedStories
-          v-if="isDesktop && otherStories.length"
-          :stories="otherStories"
-          class="related-stories"
-        />
+          <RelatedStories
+            v-if="isDesktop && otherStories.length"
+            :stories="otherStories"
+            class="related-stories"
+          />
 
-        <NewsTile
-          v-for="(story, index) in otherStories"
-          :key="'other-' + index"
-          v-bind="story"
-        />
+          <NewsTile
+            v-for="(story, index) in otherStories"
+            :key="'other-' + index"
+            v-bind="story"
+          />
 
-        <!-- If NOT desktop, RelatedStories shows AFTER all NewsTiles -->
-        <RelatedStories
-          v-if="!isDesktop && otherStories.length"
-          :stories="otherStories"
-          class="related-stories"
-        />
+          <RelatedStories
+            v-if="!isDesktop && otherStories.length"
+            :stories="otherStories"
+            class="related-stories"
+          />
+        </template>
       </div>
     </div>
   </div>
