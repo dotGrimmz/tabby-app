@@ -3,6 +3,7 @@
   <ErrorBoundary>
     <div class="app-background">
       <NuxtPage />
+      <GlobalModal />
     </div>
   </ErrorBoundary>
 </template>

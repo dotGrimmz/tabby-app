@@ -67,7 +67,7 @@ defineProps({
 .heading {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2563eb;
+  color: var(--color-primary);
   margin-left: 0.5rem;
   margin-bottom: 1rem;
   position: sticky;
@@ -115,7 +115,8 @@ defineProps({
 }
 
 .story-link:hover .title {
-  color: #10b981;
+  color: var(--color-primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .thumbnail {

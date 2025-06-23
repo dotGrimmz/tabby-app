@@ -1,6 +1,9 @@
 <template>
   <a :href="url" class="app-icon" target="_blank" rel="noopener noreferrer">
-    <img :src="src" :alt="name" width="48" height="48" />
+    <div class="app-icon-wrapper">
+      <img :src="src" :alt="name" width="48" height="48" />
+    </div>
+
     <span class="icon-text">{{ name }}</span>
   </a>
 </template>
@@ -14,6 +17,15 @@ const props = defineProps({
 </script>
 
 <style scoped>
+.app-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
 .app-icon {
   display: flex;
   flex-direction: column;

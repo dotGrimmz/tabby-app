@@ -1,60 +1,75 @@
 <template>
   <div class="page-wrapper">
     <SearchBar />
+
     <div>
       <AppIconRow v-if="icons" :icons="icons" />
       <div v-else>Loading icons...</div>
     </div>
 
     <div class="content-panel">
-      <TabNav v-model="selectedTab" />
+      <TabNav v-if="hydrated" v-model="selectedTab" />
+      <SkeletonLoader type="dot-loader" width="100%" v-if="!hydrated" />
 
-      <div v-if="!newsData || !newsData[selectedTab]" class="news-grid loading">
-        <SkeletonLoader class="featured" />
-        <SkeletonLoader v-for="n in 3" :key="n" />
-      </div>
+      <div class="news-grid">
+        <SkeletonLoader v-if="!hydrated" width="100vw" height="60vh" />
 
-      <div v-else class="news-grid">
-        <FeaturedNewsTile class="featured" v-bind="featuredStory" />
+        <template v-else>
+          <FeaturedNewsTile class="featured" v-bind="featuredStory" />
 
-        <NewsTile
-          v-for="(story, index) in secondStories"
-          :key="index"
-          v-bind="story"
-        />
+          <NewsTile
+            v-for="(story, index) in isMobile
+              ? secondStories.slice(0, 1)
+              : secondStories"
+            :key="'second-' + index"
+            v-bind="story"
+          />
 
-        <RelatedStories
-          v-if="otherStories.length"
-          :stories="otherStories"
-          class="related-stories"
-        />
+          <RelatedStories
+            v-if="isDesktop && otherStories.length"
+            :stories="otherStories"
+            class="related-stories"
+          />
 
-        <NewsTile
-          v-for="(story, index) in otherStories"
-          :key="index"
-          v-bind="story"
-        />
+          <NewsTile
+            v-for="(story, index) in otherStories"
+            :key="'other-' + index"
+            v-bind="story"
+          />
+
+          <RelatedStories
+            v-if="!isDesktop && otherStories.length"
+            :stories="otherStories"
+            class="related-stories"
+          />
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const selectedTab = ref("Home");
-const { data: icons } = await useFetch("/api/icons");
+const { tab: selectedTab, hydrated } = usePersistedState(
+  "selectedTab",
+  "Home",
+  "index-scroll-position"
+);
 
+const { data: icons } = await useFetch("/api/icons");
 const { data: newsData } = await useFetch("/api/newsData");
 
 const featuredStory = computed(
   () => newsData.value?.[selectedTab.value]?.[0] || []
 );
 const secondStories = computed(
-  () => newsData.value?.[selectedTab.value]?.slice(0, 2) || []
+  () => newsData.value?.[selectedTab.value]?.slice(1, 3) || []
 );
 
 const otherStories = computed(
   () => newsData.value?.[selectedTab.value]?.slice(4) || []
 );
+
+const { isMobile, isDesktop } = useIsMobile();
 </script>
 
 <style scoped>
