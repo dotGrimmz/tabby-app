@@ -9,7 +9,7 @@
   >
     <img v-if="image" :src="image" alt="news thumbnail" class="tile-image" />
     <div class="tile-content">
-      <p class="tag" :class="{ hidden: !tag }">{{ tag || "placeholder" }}</p>
+      <p class="tag">{{ tag || " " }}</p>
       <h3 class="title">{{ title }}</h3>
       <p class="meta">{{ cleanSource }} — {{ timestamp }}</p>
     </div>

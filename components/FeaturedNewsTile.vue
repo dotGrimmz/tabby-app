@@ -9,7 +9,7 @@
   >
     <img v-if="image" :src="image" alt="featured image" class="featured-img" />
     <div class="text-content">
-      <p class="tag" v-if="tag">{{ tag }}</p>
+      <p class="tag">{{ tag || "Featured" }}</p>
       <h2 class="title">{{ title }}</h2>
       <p class="meta">{{ source }} — {{ timestamp }}</p>
     </div>
@@ -73,6 +73,7 @@ const { trackClick } = useTracking(tileRef, props.title, props.id);
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: black;
 }
 
 .meta {
