@@ -52,7 +52,9 @@ const { trackClick } = useTracking(tileRef, props.title, props.id);
   width: 100%;
   height: 180px;
   object-fit: cover;
+  object-position: center;
   display: block;
+  margin: 0 auto;
 }
 
 .text-content {
