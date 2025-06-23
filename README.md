@@ -86,29 +86,6 @@ npm run build
 npm run preview
 ```
 
-## 🛠️ Project STructure Highlights
-
-components/
-├── FeaturedNewsTile.vue
-├── NewsTile.vue
-├── RelatedStories.vue
-├── CompactRelatedStory.vue
-├── AppIcon.vue
-├── TabNav.vue
-
-composables/
-├── useTracking.ts // Logs user interactions
-├── useErrorLogger.ts // Persists runtime errors
-
-mock/
-├── icons.json
-├── stories.json // Mock news data per tab
-
-pages/
-├── index.vue // Main layout and logic
-
-public/
-├── images/ // All tile images
 
 ## 📋 Project Structure Highlights
 
