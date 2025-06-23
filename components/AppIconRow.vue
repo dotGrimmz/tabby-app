@@ -13,7 +13,12 @@ const props = defineProps({
 <template>
   <div class="icon-row">
     <AppIcon v-for="icon in icons" :key="icon.name" v-bind="icon" />
-    <AppIcon name="Add" src="/icons/add.png" @click.prevent="onAddClick" />
+    <AppIcon
+      class="hidden"
+      name="Add Social"
+      src="/icons/add.png"
+      @click.prevent="onAddClick"
+    />
   </div>
 </template>
 
